@@ -3,7 +3,7 @@ import os
 
 import requests
 from bs4 import BeautifulSoup, SoupStrainer
-cache_dir = '/Users/kreitzem/wifi_redirects'
+cache_dir = 'wifi_redirects'
 r = requests.get("http://captive.apple.com")
 b = BeautifulSoup(r.text, 'lxml')
 if b.title.text == 'Success':
@@ -37,4 +37,3 @@ else:
     #for link in BeautifulSoup(r.text, parseOnlyThese=SoupStrainer('a')):
     #    if link.has_attr('href'):
     #        print link['href']
-
